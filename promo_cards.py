@@ -14,24 +14,29 @@ def main():
     )
 
     strings = [
-        "4LZTCF"
+        "4LZTCF",
+        "4FGSR3",
+        "65FGTG",
+        "FXGG55"
     ]
 
 
     for string in strings:
         qr.add_data(f"skoleapp.com/register/?code={string}")
         qr.make(fit=True)
-        fnt = ImageFont.truetype('/Users/werneriaa/Library/Fonts/Roboto Mono for Powerline.ttf', 45)
+        fnt = ImageFont.truetype('/Users/werneriaa/Library/Fonts/Roboto Mono for Powerline.ttf', 80)
 
         img = qr.make_image(fill_color="#FAF2DE", back_color="#AD3636")
         #img.save(f"{Path.home()}/Downloads/{string}.png")
-        background = Image.open("skole_kortti2.png")
-        img = img.resize((430,430))
+        background = Image.open("promocard.png")
+        img = img.resize((700,700))
         d = ImageDraw.Draw(background)
-        d.text((45,125), f"{string}",font=fnt, fill=(250,242,222))
+        d.text((105,275), f"{string}",font=fnt, fill=(250,242,222))
         img.show()
-        background.paste(img, (3, 170))
+        background.paste(img, (30, 360))
         background.show()
+        
+        background.save(f"{Path.home()}/Downloads/{string}.png")
 
 
 if __name__ == "__main__":
