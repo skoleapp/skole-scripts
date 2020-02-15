@@ -1,9 +1,19 @@
 import random
 
-LETTERS = "ABCDEFGHJKMNPQRSTUVWXYZ123456789"
+LETTERS = "ABCDEFGHJKLMNPQRSTUVWXY3456789"
+LEN = 8
 AMOUNT = 250
 
-with open("codes.txt", "w") as f:
-    for _ in range(AMOUNT):
-        code = "".join(random.sample(LETTERS, 6))
-        f.write(f"{code}\n")
+   
+def main():    
+    codes = set()
+    while len(codes) < AMOUNT:
+        code = "".join(random.sample(LETTERS, LEN))
+        codes.add(f"{code}\n")
+    
+    with open("codes.txt", "w") as f:
+        f.writelines(codes)
+        
+        
+if __name__ == "__main__":
+    main()
