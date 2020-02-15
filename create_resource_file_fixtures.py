@@ -11,11 +11,15 @@ model = '''
     '''
 
 
-f=open("resource-parts.txt", 'w+')
+f = open("resource-parts.txt", 'w+')
 
-mypath ='/Users/werneriaa/Documents/Tentit' 
+mypath = '/Users/werneriaa/Documents/Tentit'
 onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
-for i,file_ in enumerate(onlyfiles, start = 1):
-    filemodel = model.format(i,i,file_)
+i = 1
+for file_ in onlyfiles:
+    if ".DS" in file_:
+        continue
+    filemodel = model.format(i, i, file_)
+    i = i + 1
     print(filemodel)
     f.write(filemodel)

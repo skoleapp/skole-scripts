@@ -23,7 +23,8 @@ def create_resources(model):
     mypath = '/Users/werneriaa/Documents/Tentit'
     onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
     coursedict = create_course_dict()
-    for i, file_ in enumerate(onlyfiles, start=1):
+    i = 1
+    for file_ in onlyfiles:
         if ".DS" in file_:
             continue
         title = file_[:-15]
@@ -40,6 +41,19 @@ def create_resources(model):
                     i, title, file_[-14:-4], coursedict[tit])
                 print(filemodel)
                 f.write(filemodel)
+                i = i + 1
+            except KeyError as e:
+                print(e)
+                print(file_)
+        elif "Välikoe" in title:
+            newtitle = title.split(" Välikoe")
+            try:
+                tit = newtitle[0].replace("ä", "ä").replace("ö", "ö")
+                filemodel = model.format(
+                    i, title, file_[-14:-4], coursedict[tit])
+                print(filemodel)
+                f.write(filemodel)
+                i = i + 1
             except KeyError as e:
                 print(e)
                 print(file_)
