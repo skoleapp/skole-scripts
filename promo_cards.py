@@ -17,7 +17,7 @@ def main():
         strings = [code.strip() for code in f.readlines()]
 
     for string in strings:
-        qr.add_data(f"skoleapp.com/register/?code={string}")
+        qr.add_data(f"skoleapp.com/register?code={string}")
         qr.make(fit=True)
         fnt = ImageFont.truetype(
             '/Users/werneriaa/Library/Fonts/Roboto Mono for Powerline.ttf', 80)
@@ -28,11 +28,13 @@ def main():
         img = img.resize((700, 700))
         d = ImageDraw.Draw(background)
         d.text((105, 275), f"{string}", font=fnt, fill=(250, 242, 222))
-        img.show()
+        # img.show()
         background.paste(img, (30, 360))
-        background.show()
+        # background.show()
 
-        background.save(f"{Path.home()}/Downloads/{string}.png")
+        background.save(
+            f"/Users/werneriaa/Documents/Skole/promocards/{string}.png")
+        qr.clear()
 
 
 if __name__ == "__main__":
