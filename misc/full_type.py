@@ -82,11 +82,9 @@ def flatten_of_types(d):
 
 
 def main() -> None:
-    query = full_type(2)
+    query = full_type(10)
     with open("full_type.graphql", "w") as f:
         f.write(query)
-    with open("result.json") as f:
-        result = json.load(f)["data"]["__type"]
 
     # with open("result.json") as f:
     #     result = json.load(f)["data"]["__type"]
@@ -94,10 +92,8 @@ def main() -> None:
     # result = remove_empty_elements(result)
     # result = flatten_of_types(result)
 
-
     # with open("filtered.json", "w") as f:
     #     json.dump(result, f, indent=2)
-
 
 
 if __name__ == "__main__":
