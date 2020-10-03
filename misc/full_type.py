@@ -82,7 +82,7 @@ def flatten_of_types(d):
 
 
 def main() -> None:
-    query = full_type(10)
+    query = full_type(6)
     with open("full_type.graphql", "w") as f:
         f.write(query)
 
