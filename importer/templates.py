@@ -5,10 +5,10 @@ COURSE = """\
     name: "{name}"
     code: "{code}"
     subjects: {subjects}
-    school: 1
+    school: 2
     user: null
-    modified: "2020-03-15 12:00:00.000000+00:00"
-    created: "2020-03-15 12:00:00.000000+00:00"
+    modified: "2021-01-15 12:00:00.000000+00:00"
+    created: "2021-01-15 12:00:00.000000+00:00"
 """
 
 SUBJECT = """\
