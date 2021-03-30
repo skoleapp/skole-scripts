@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "skole-scripts"
+version = "1.0.0"
+description = "Miscellaneous scripts for Skole"
+authors = ["Skole <admin@skoleapp.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+aiohttp = "3.7.3"
+beautifulsoup4 = "4.9.3"
+html5lib = "1.1"
+pillow = "8.0.1"
+pypeln = "0.4.6"
+pyyaml = "5.3.1"
+qrcode = "6.1"
+requests = "2.24.0"
